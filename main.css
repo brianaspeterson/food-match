@@ -1,4 +1,5 @@
 /*css*/
+/*use percentages instead of px then adjust boxes to be a certain percentage of total container*/
 .flex-container {
   padding: 0;
   margin-bottom: 10px;
@@ -33,19 +34,19 @@
 
   height:65px;
   border-bottom: 5px solid blue;
-  margin-bottome:15px;
+  margin-bottom: 15px;
 }
 
 #title-box{
 	height:65px;
-	border-bottom: 5px solid blue;
-	margin-bottom: 15px;
+	background: grey;
+	margin: 0px 57px 0px 57px;
 
 }
 
 .title-container{
 
-  padding: 50px;
+  padding: 0px;
   margin: 0 10px 0px 10px;
   border: 0px;
   list-style: none;
