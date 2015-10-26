@@ -1,7 +1,7 @@
 /*css*/
 .flex-container {
   padding: 0;
-  margin: 0;
+  margin-bottom: 10px;
   list-style: none;
   
   display: -webkit-box;
@@ -33,12 +33,20 @@
 
   height:65px;
   border-bottom: 5px solid blue;
+  margin-bottome:15px;
+}
+
+#title-box{
+	height:65px;
+	border-bottom: 5px solid blue;
+	margin-bottom: 15px;
+
 }
 
 .title-container{
 
   padding: 50px;
-  margin: 0;
+  margin: 0 10px 0px 10px;
   border: 0px;
   list-style: none;
   display: -webkit-box;
