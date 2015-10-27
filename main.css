@@ -1,77 +1,44 @@
 /*css*/
-.flex-container {
-  padding: 0;
-  margin-bottom: 10px;
-  list-style: none;
-  
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  
-  -webkit-flex-flow: row wrap;
-  justify-content: space-around;
+
+.img-max{
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+#logo-left{
+  padding-top:10px;
+}
+#logo-left img {
+    float: left;
+    width: 105px;
 }
 
-.flex-item {
-  background: tomato;
-  padding: 5px;
-  width: 350px;
-  height: 200px;
-  margin-top: 10px;
-  
-  line-height: 150px;
-  color: white;
-  font-weight: bold;
-  font-size: 3em;
-  text-align: center;
+#recipe-header {
+    height: 60px;
+    width:100%;
+    background: #313567;
+    border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color:white;
+}
+#recipecard-box {
+  border: 1px solid #313567;
+  height: 220px;
+  width:100%;
+  padding-left: 10px;
+  padding-right:10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 
 }
-
-#header {
-
-  height:65px;
-  border-bottom: 5px solid blue;
-  margin-bottome:15px;
+.card-size{
+  margin-top: 25px;
+  width: 100%;
+  height: 70px;
+  border: 1px solid #313567;
+  border-radius: 5px;
 }
-
-#title-box{
-	height:65px;
-	border-bottom: 5px solid blue;
-	margin-bottom: 15px;
-
-}
-
-.title-container{
-
-  padding: 50px;
-  margin: 0 10px 0px 10px;
-  border: 0px;
-  list-style: none;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  
-  -webkit-flex-flow: row wrap;
-  justify-content: space-around;
-
-}
-
-.title-item{
-
-  background: tomato;
-  padding: 5px;
-  width: 250px;
-  height: 50px;
-  margin-top: 10px;
-  
-  line-height: 150px;
-  color: white;
-  font-weight: bold;
-  font-size: 3em;
-  text-align: center;
+.footer-bottom{
+  height:90px;
 
 }
