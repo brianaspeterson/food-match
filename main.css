@@ -1,63 +1,200 @@
 /*css*/
 
-.img-max{
+.img-max {
+    width: 100%;
+    margin-top:10px;
+    border: 1px solid rgba(0,0,0,0.25);
+
+}
+.img-max-highlight {
+    width: 100%;
+    margin-top: 5%;
+    border: 5px solid #313567;
+}
+.img-wrong-highlight {
+    width: 100%;
+    margin-top:15px;
+    border: 5px solid red;
+}
+#border{
+  border-width: 1px;
+  border-color: #313567;
+  border-style: solid;
+  margin-top: 10px;
   width: 100%;
-  padding-top: 15px;
-  padding-bottom: 15px;
 }
 
-
-
-#logo-left{
-  padding-top:10px;
+#logo-left {
+    padding-top: 10px;
 }
+
 #logo-left img {
     float: left;
     width: 105px;
 }
 
 #recipe-header {
+    text-align: center;
+    margin-top: 2%;
     height: 60px;
-    width:100%;
+    width: 100%;
     background: #313567;
     border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  color:white;
-  font-style: Signika;
-
+    border-top-right-radius: 5px;
+    -webkit-border-radius-top-left: 5px;
+    -webkit-border-radius-top-right: 5px;
+    -moz-border-radius-top-right: 5px;
+    -moz-border-radius-top-left: 5px;
+    -ms-border-radius-top-left: 5px;
+    -ms-border-radius-top-right: 5px;
+    -o-border-radius-top-left: 5px;
+    -o-border-radius-top-right: 5px;
+    color: white;
+    font-style: Signika, sans-serif;
+    font-size: 22px;
+    line-height: 40px;
 }
+
 #recipecard-box {
-  border: 1px solid #313567;
-  height: 220px;
-  width:100%;
+    border: 1px solid #313567;
+    height: 220px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom-left-radius: 5px;
+    border-top-bottom-radius: 5px;
+    -webkit-border-radius-bottom-left: 5px;
+    -webkit-border-radius-bottom-right: 5px;
+    -moz-border-radius-bottom-right: 5px;
+    -moz-border-radius-bottom-left: 5px;
+    -ms-border-radius-bottom-left: 5px;
+    -ms-border-radius-bottom-right: 5px;
+    -o-border-radius-bottom-left: 5px;
+    -o-border-radius-bottom-right: 5px;
+}
+
+.card-size {
+    margin-top: 7%;
+    width: 100%;
+    height: 70px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    font-family: Signika, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    background: #f7f7f9;
+    color: #313567;
+    border: 1px solid rgba(0,0,0,0.25);
+    padding: 10px;
+
+    /*-webkit-box-shadow: 0 1px 0 0 #4a4d79 inset,0 1px 0 0 rgba(0,0,0,0.25);
+    -moz-box-shadow: 0 1px 0 0 #4a4d79 inset,0 1px 0 0 rgba(0,0,0,0.25);
+    box-shadow: 0 1px 0 0 #4a4d79 inset,0 1px 0 0 rgba(0,0,0,0.25);*/
+}
+
+.footer-bottom {
+    height: 90px;
+}
+
+
+.onTop {
+    margin-top: 0px;
+    margin-right: 10px;
+    width: 93%;
+    height: 65px;
+    font-family: Signika, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    background: #f7f7f9;
+    position: absolute;
+    z-index: 5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    background: #f7f7f9;
+    color: #313567;
+    border: 1px solid rgba(0,0,0,0.25);
+    padding: 10px;
+}
+
+#points-right{
+  font-family: Signika, sans-serif;
+  font-size: 22px;
+  color: #313567;
+  margin-top: 10px;
+
+}
+
+#time-center{
+  font-size: 22px;
+  color: #313567;
+  font-family: Signika, sans-serif;
+  float: right;
+  margin-top: 10px;
+
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 10px;
+}
+
+.btn{
+  -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    font-size: 20px;
+    line-height: 42px;
+    height: 42px;
+    padding: 0 21px;
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-family: "Signika",sans-serif;
+    font-weight: 400;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 -2px 0 rgba(0,0,0,0.1);
+    background: -webkit-gradient(linear, to bottom, to top, color-stop(0%, #3c3f6f), color-stop(100%, #313567));
+    background: -webkit-linear-gradient(to bottom, #3c3f6f, #313567);
+    background: -moz-linear-gradient(to bottom, #3c3f6f, #313567);
+    background: -o-linear-gradient(to bottom, #3c3f6f, #313567);
+    background: linear-gradient(to bottom, #3c3f6f,#313567);
+    background-color: #313567;
+    -webkit-box-shadow: 0 1px 0 0 #4a4d79 inset,0 1px 0 0 rgba(0,0,0,0.25);
+    -moz-box-shadow: 0 1px 0 0 #4a4d79 inset,0 1px 0 0 rgba(0,0,0,0.25);
+    box-shadow: 0 1px 0 0 #4a4d79 inset,0 1px 0 0 rgba(0,0,0,0.25);
+    border: 1px solid #1f2140;
+    outline: none;
+    cursor: pointer;
+}
+
+#game-start{
+  float: right;
   padding-left: 10px;
-  padding-right:10px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-
 }
-.card-size{
-  margin-top: 25px;
-  width: 100%;
-  height: 70px;
-  border: 1px solid #313567;
-  border-radius: 5px;
-  font-family: Signika;
-  font-size: 15px;
-  font-weight: 500;
-  background: #f7f7f9;
+.recipe-link{
+        display: block;
+    position: relative;
+    margin-bottom: 5px;
 }
 
-#subtitle{
-
+.subtitle{
+    font-family: Signika, cursive, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.40);
+    font-style: italic;
 
 }
-.footer-bottom{
-  height:90px;
-
-}
-.over{
-
-	background:green;
-}
-
