@@ -1,12 +1,48 @@
-(function() {
+ var dropZones = document.querySelectorAll('#dropZones');
+    var dragElements = document.getElementsByClassName('card-size');
+    var elementDragged = null;
 
-    function dragStart(ev) {
+    for (var i = 0; i < dragElements.length; i++) {
+        console.log("VAL:" + i);
+        // Event Listener for when the drag interaction starts.
+        dragElements[i].addEventListener('dragstart', dragStart);
+
+        // Event Listener for when the drag interaction finishes.
+        // dragElements[i].addEventListener('dragend', function(e) {
+        //     elementDragged = null;
+        // });
+    
+    // Event Listener for when the dragged element is over the drop zone.
+    dropZones[i].addEventListener('dragover', dragOver);
+
+    // Event Listener for when the dragged element enters the drop zone.
+    dropZones[i].addEventListener('dragenter', dragEnter);
+
+    // Event Listener for when the dragged element leaves the drop zone.
+    // dropZones.addEventListener('dragleave', function(e) {
+    //     this.className = "";
+    // });
+
+    // Event Listener for when the dragged element dropped in the drop zone.
+    dropZones[i].addEventListener('drop', dragDrop);
+  }
+
+
+
+function dragStart(ev) {
         ev.dataTransfer.effectAllowed = 'move';
-        ev.dataTransfer.setData("Text", ev.currentTarget.getAttribute('id'));
+        ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));
         ev.dataTransfer.setDragImage(ev.target, 0, 0);
 
         return true;
     }
+
+    function add(){
+
+      //have a listerner that transmits to id points-counter
+    }
+
+
 
     function dragEnter(ev) {
         event.preventDefault();
@@ -14,82 +50,26 @@
     }
 
     function dragOver(ev) {
+
         return false;
     }
 
     function dragDrop(ev) {
+
         var src = ev.dataTransfer.getData("Text");
-        ev.target.appendChild(document.getElementById(src));
-        ev.stopPropagation();
-        return false;
+        var referenceNode = ev.currentTarget.firstChild;
+        var element = document.getElementById(src);
+        var imgId = ev.target.id || ev.target.firstElementChild.id;
+        if (src.indexOf(imgId) > -1) { //come back to changing alt tags
+            element.className = "onTop";
+            ev.target.className = "img-max-highlight";
+            ev.currentTarget.insertBefore(element, referenceNode);
+            ev.stopPropagation();
+            this.add();
+            return false;
+        } else {
+            ev.target.className = "img-wrong-highlight"
+            return true;
+        }
+
     }
-
-
-
-
-})();
-// (function() {
-
-// 	var dropMeatball = document.querySelector('#meatball-recipe img');
-// 	console.log("DROP " + dropMeatball);
-// 	var dragElements = document.querySelectorAll('#drag-elements div');
-// 	var elementDragged = null;
-	
-
-// 	for (var i = 0; i < dragElements.length; i++) {
-
-//   // Event Listener for when the drag interaction starts.
-//   dragElements[i].addEventListener('dragstart', function(e) {
-//     e.dataTransfer.effectAllowed = 'move';
-//     e.dataTransfer.setData('text', this.innerHTML);
-//     elementDragged = this;
-//   });
-
-//   // Event Listener for when the drag interaction finishes.
-//   dragElements[i].addEventListener('dragend', function(e) {
-//     elementDragged = null;
-//   });
-
-// };
-
-// // Event Listener for when the dragged element is over the drop zone.
-// dropMeatball.addEventListener('dragover', function(e) {
-//   if (e.preventDefault) {
-//     e.preventDefault();
-//   }
-
-//   e.dataTransfer.dropEffect = 'move';
-
-//   return false;
-// });
-
-// // Event Listener for when the dragged element enters the drop zone.
-// dropMeatball.addEventListener('dragenter', function(e) {
-//   this.className = "over";
-// });
-
-// // Event Listener for when the dragged element leaves the drop zone.
-// dropMeatball.addEventListener('dragleave', function(e) {
-//   this.className = "";
-// });
-
-// // Event Listener for when the dragged element dropped in the drop zone.
-// dropMeatball.addEventListener('drop', function(e) {
-//   if (e.preventDefault) e.preventDefault(); 
-//   if (e.stopPropagation) e.stopPropagation();
-
-//   this.className = "over";
-//   var data = e.dataTransfer.getData('text');
-//   this.innerHTML = "Dropped " + e.dataTransfer.getData('text');
-//   e.target.appendChild(document.getElementById(data));
-
-//   // Remove the element from the list.
-//   document.querySelector('#drag-elements').removeChild(elementDragged);
-
-//   return false;
-// });
-
-
-
-
-// })();

@@ -6,8 +6,7 @@
     <link rel="stylesheet" type="text/css" href="main.css" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type="text/javascript">
-    function dragStart(ev) {
+   <!--function dragStart(ev) {
         ev.dataTransfer.effectAllowed = 'move';
         ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));
         ev.dataTransfer.setDragImage(ev.target, 0, 0);
@@ -50,8 +49,8 @@
             return true;
         }
 
-    }
-    </script>
+    }-->
+    
 </head>
 
 <body>
@@ -84,32 +83,32 @@
     </header>
     <div class="container">
         <div class="row">
-            <div class="col-xs-6 col-sm-4 col-md-4" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
+            <div class="col-xs-6 col-sm-4 col-md-4" id="dropZones">
                 <a href="https://www.blueapron.com/recipes/pork-meatballs-in-butter-lettuce-cups-with-soy-dipping-sauce-sticky-rice" class="recipe-link">
                 <img alt="Asian Pork Meatballs" class="img-max" id="meatballs" src="http://d3ocwlpqxdtw9u.cloudfront.net/recipes/1384/c_main_dish_images/20151001-1931-14-7875/2P_092215_6_AsianPorkMeatballsButterLettuce_20-_204324_high_menu_thumb.jpg" />
             </a>
             </div>
-            <div class="col-xs-6 col-sm-4 col-md-4" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
+            <div class="col-xs-6 col-sm-4 col-md-4" id="dropZones">
                 <a href="https://www.blueapron.com/recipes/jamaican-jerk-chicken-maduros-with-stewed-collard-greens-charred-lime" class="recipe-link">
                 <img alt="Jerk Chicken Maduros" class="img-max" id="maduros" src="http://d3ocwlpqxdtw9u.cloudfront.net/recipes/1383/c_main_dish_images/20151001-2043-27-9766/2P_092215_3_JerkChicken_Maduros_20-_204254_high_menu_thumb.jpg" />
             </a>
             </div>
-            <div class="col-xs-6 col-sm-4 col-md-4" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
+            <div class="col-xs-6 col-sm-4 col-md-4" id="dropZones">
                 <a href="https://www.blueapron.com/recipes/salmon-pastrami-on-rye-with-red-cabbage-green-apple-slaw" class="recipe-link">
                 <img alt="Salmon Pastrami" class="img-max" id="pastrami" src="http://d3ocwlpqxdtw9u.cloudfront.net/recipes/341/c_main_dish_images/20151001-2147-14-0756/forcard2_high_menu_thumb.jpg" />
             </a>
             </div>
-            <div class="col-xs-6 col-sm-4 col-md-4" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
+            <div class="col-xs-6 col-sm-4 col-md-4" id="dropZones">
                 <a href="https://www.blueapron.com/recipes/baked-sicilian-style-rigatoni-with-lacinato-kale-ricotta-salata" class="recipe-link">
                 <img alt="Baked Sicilian" class="img-max" id="sicilian" src="http://d3ocwlpqxdtw9u.cloudfront.net/recipes/1385/c_main_dish_images/20151001-2117-18-4133/2P_092215_3_BakedSicilanStyleRigatoni_20-_204269_high_menu_thumb.jpg" />
                 </a>
             </div>
-            <div class="col-xs-6 col-sm-4 col-md-4" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
+            <div class="col-xs-6 col-sm-4 col-md-4" id="dropZones">
                 <a href="https://www.blueapron.com/recipes/acorn-squash-tempura-tacos-with-spanish-paprika" class="recipe-link">
                 <img alt="Acorn Squash Tacos" class="img-max" id="tacos" src="http://d3ocwlpqxdtw9u.cloudfront.net/recipes/125/c_main_dish_images/20141125-2117-8801-0530/acorn_20squash_20tacos-5563_high_menu_thumb.jpg" />
             </a>
             </div>
-            <div class="col-xs-6 col-sm-4 col-md-4" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
+            <div class="col-xs-6 col-sm-4 col-md-4" id="dropZones">
                 <a href="https://www.blueapron.com/recipes/tahini-beet-soba-with-beet-greens-and-cabbage" class="recipe-link">
                 <img alt="Beet Soba Noodles" class="img-max" id="noodles" src="http://d3ocwlpqxdtw9u.cloudfront.net/recipes/473/c_main_dish_images/20141003-2004-6741-5840/Beet_20Tahini_20Soba_20Noodles-3913_high_menu_thumb.jpg" />
             </a>
@@ -125,36 +124,36 @@
                 <div id="recipecard-box">
                     <div class="row">
                         <div class="col-xs-6 col-sm-4 col-md-4">
-                            <div draggable="true" id="pork-meatballs" class="card-size" ondragstart="return dragStart(event)">
+                            <div draggable="true" id="pork-meatballs" class="card-size">
                                 Pork Meatballs in Butter Lettuce Cups
                                 <div class="subtitle">with Soy Dipping Sauce & Sticky Rice</div>
                             </div>
                             <!-- add class during move -->
                         </div>
                         <div class="col-xs-6 col-sm-4 col-md-4" id="drag-elements">
-                            <div draggable="true" class="card-size" ondragstart="return dragStart(event)" id="chicken-maduros">Jamaican Jerk Chicken & Maduros
+                            <div draggable="true" class="card-size" id="chicken-maduros">Jamaican Jerk Chicken & Maduros
                                 <div class="subtitle">with Soy Dipping Sauce & Sticky Rice</div>
                             </div>
                         </div>
                         <div class="col-xs-6 col-sm-4 col-md-4" id="drag-elements">
-                            <div draggable="true" class="card-size" ondragstart="return dragStart(event)" id="salmon-pastrami">Salmon Pastrami on Rye
+                            <div draggable="true" class="card-size" id="salmon-pastrami">Salmon Pastrami on Rye
                                 <div class="subtitle">with Red Cabbage & Green Apple Slaw</div>
                             </div>
                         </div>
                         <div class="col-xs-6 col-sm-4 col-md-4" id="drag-elements">
-                            <div draggable="true" class="card-size" ondragstart="return dragStart(event)" id="baked-sicilian">
+                            <div draggable="true" class="card-size" id="baked-sicilian">
                                 Baked Sicilian-Style Rigatoni
                                 <div class="subtitle">with Lacinato Kale & Ricotta Salata</div>
                             </div>
                         </div>
                         <div class="col-xs-6 col-sm-4 col-md-4" id="drag-elements">
-                            <div draggable="true" class="card-size" ondragstart="return dragStart(event)" id="squash-tacos">
+                            <div draggable="true" class="card-size" id="squash-tacos">
                                 Acorn Squash Tempura Tacos
                                 <div class="subtitle">with Smoked Paprika-Lime Sauce</div>
                             </div>
                         </div>
                         <div class="col-xs-6 col-sm-4 col-md-4" id="drag-elements">
-                            <div draggable="true" class="card-size" ondragstart="return dragStart(event)" id="soba-noodles">
+                            <div draggable="true" class="card-size" id="soba-noodles">
                                 Ponzu-Tahini Soba Noodle Salad
                                 <div class="subtitle">with Yellow Beet, Cabbage & Chard</div>
                             </div>
@@ -165,6 +164,9 @@
         </div>
     </div>
     <footer class="footer-bottom"></footer>
+        <script type="text/javascript" src="main.js"></script>
+
+
 </body>
 
 </html>
