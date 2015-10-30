@@ -1,75 +1,120 @@
- var dropZones = document.querySelectorAll('#dropZones');
-    var dragElements = document.getElementsByClassName('card-size');
-    var elementDragged = null;
+ (function(document) {
 
-    for (var i = 0; i < dragElements.length; i++) {
-        console.log("VAL:" + i);
-        // Event Listener for when the drag interaction starts.
-        dragElements[i].addEventListener('dragstart', dragStart);
+     var dropZones = document.getElementsByClassName('recipe-link');
 
-        // Event Listener for when the drag interaction finishes.
-        // dragElements[i].addEventListener('dragend', function(e) {
-        //     elementDragged = null;
-        // });
-    
-    // Event Listener for when the dragged element is over the drop zone.
-    dropZones[i].addEventListener('dragover', dragOver);
+     var dragElements = document.getElementsByClassName('card-size');
+     var startButton = document.getElementById('start-game');
+     var timerPage = document.querySelector('#time');
+     var points = 0;
+     var counter = 0;
 
-    // Event Listener for when the dragged element enters the drop zone.
-    dropZones[i].addEventListener('dragenter', dragEnter);
+     var elementDragged = null;
 
-    // Event Listener for when the dragged element leaves the drop zone.
-    // dropZones.addEventListener('dragleave', function(e) {
-    //     this.className = "";
-    // });
+     for (var i = 0; i < dragElements.length; i++) {
+         dragStart(dragElements[i], i);
+         dragEnter(dropZones[i], i);
+         dragOver(dropZones[i], i);
+         dragDrop(dropZones[i], i);
+     }
 
-    // Event Listener for when the dragged element dropped in the drop zone.
-    dropZones[i].addEventListener('drop', dragDrop);
-  }
+     startButton.addEventListener('click', function() {
+         var timer = 120,
+             minutes, seconds;
+         var intervalFunc = setInterval(function() {
+             minutes = parseInt(timer / 60, 10);
+             seconds = parseInt(timer % 60, 10);
 
+             minutes = minutes < 10 ? "0" + minutes : minutes;
+             seconds = seconds < 10 ? "0" + seconds : seconds;
 
+             timerPage.textContent = minutes + ":" + seconds;
 
-function dragStart(ev) {
-        ev.dataTransfer.effectAllowed = 'move';
-        ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));
-        ev.dataTransfer.setDragImage(ev.target, 0, 0);
-
-        return true;
-    }
-
-    function add(){
-
-      //have a listerner that transmits to id points-counter
-    }
+             if (--timer < 0) {
+                 clearInterval(intervalFunc);
+                 timer = 0;
+                 alert("GAME OVER!");
+                 document.location.reload(true);
+             }
 
 
+         }, 1000);
 
-    function dragEnter(ev) {
-        event.preventDefault();
-        return true;
-    }
+     })
 
-    function dragOver(ev) {
 
-        return false;
-    }
+     function dragStart(dragElements, i) {
 
-    function dragDrop(ev) {
+         dragElements.addEventListener('dragstart', function(ev) {
+             ev.dataTransfer.effectAllowed = 'move';
+             ev.dataTransfer.setData('Text', ev.target.getAttribute('id'));
+             ev.dataTransfer.setDragImage(ev.target, 0, 0);
+             return true;
 
-        var src = ev.dataTransfer.getData("Text");
-        var referenceNode = ev.currentTarget.firstChild;
-        var element = document.getElementById(src);
-        var imgId = ev.target.id || ev.target.firstElementChild.id;
-        if (src.indexOf(imgId) > -1) { //come back to changing alt tags
-            element.className = "onTop";
-            ev.target.className = "img-max-highlight";
-            ev.currentTarget.insertBefore(element, referenceNode);
-            ev.stopPropagation();
-            this.add();
-            return false;
-        } else {
-            ev.target.className = "img-wrong-highlight"
-            return true;
-        }
+         });
+     }
 
-    }
+     function dragEnter(dropZones, i) {
+         dropZones.addEventListener('dragenter', function(ev) {
+             event.preventDefault();
+             return true;
+         });
+     }
+
+     function dragOver(dropZones, i) {
+         dropZones.addEventListener('dragover', function(ev) {
+             event.preventDefault();
+             return true;
+         });
+     }
+
+     function dragDrop(dropZones, i) {
+         dropZones.addEventListener('drop', function(ev) {
+
+             var src = ev.dataTransfer.getData("Text");
+             var referenceNode = ev.currentTarget.firstChild || ev.currentTarget;
+             var element = document.getElementById(src);
+             var imgId = ev.target.id || ev.target.firstElementChild.id;
+             if (src.indexOf(imgId) > -1) { 
+                 counter++;
+                 points += 10;
+                 span = document.getElementById("points-counter");
+                 span.innerHTML = points;
+                 element.className = "onTop";
+                 if (imgId === (noodles || tacos || sicilian)) {
+                     ev.target.className = "img-max-highlight-bottom";
+                 } else if (imgId === "pastrami" ) {
+                     ev.target.className = "img-max-highlight-pastrami";
+                 } else {
+                     ev.target.className = "img-max-highlight";
+                 }
+                 ev.currentTarget.insertBefore(element, referenceNode);
+                 element.draggable = false;
+                 ev.stopPropagation();
+                 if (counter === 6) {
+                     alert("GAME OVER");
+                     document.location.reload(true);
+                 }
+                 return false;
+             } else {
+                 if (element.className === "onTop") {
+                     ev.target.className = "img-max-highlight";
+                 } else if (ev.target.className !== "col-xs-6 col-sm-4 col-md-4" && imgId === "maduros") {
+                     ev.target.className = "img-wrong-highlight-maduros";
+
+                 } else if (ev.target.className !== "col-xs-6 col-sm-4 col-md-4") {
+                    ev.target.className = "img-wrong-highlight"
+                 }
+                 else{
+                     ev.target.firstElementChild.firstElementChild.className = "img-wrong-highlight";
+                 }
+                 points -= 5;
+                 span = document.getElementById("points-counter");
+                 span.innerHTML = points;
+                 return true;
+             }
+
+         });
+     }
+
+
+ }(document));

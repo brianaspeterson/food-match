@@ -6,51 +6,6 @@
     <link rel="stylesheet" type="text/css" href="main.css" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-   <!--function dragStart(ev) {
-        ev.dataTransfer.effectAllowed = 'move';
-        ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));
-        ev.dataTransfer.setDragImage(ev.target, 0, 0);
-
-        return true;
-    }
-
-    function add(){
-
-    	//have a listerner that transmits to id points-counter
-    }
-
-
-
-    function dragEnter(ev) {
-        event.preventDefault();
-        return true;
-    }
-
-    function dragOver(ev) {
-
-        return false;
-    }
-
-    function dragDrop(ev) {
-
-        var src = ev.dataTransfer.getData("Text");
-        var referenceNode = ev.currentTarget.firstChild;
-        var element = document.getElementById(src);
-        var imgId = ev.target.id || ev.target.firstElementChild.id;
-        if (src.indexOf(imgId) > -1) { //come back to changing alt tags
-            element.className = "onTop";
-            ev.target.className = "img-max-highlight";
-            ev.currentTarget.insertBefore(element, referenceNode);
-            ev.stopPropagation();
-            this.add();
-            return false;
-        } else {
-            ev.target.className = "img-wrong-highlight"
-            return true;
-        }
-
-    }-->
-    
 </head>
 
 <body>
@@ -65,7 +20,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-4">
                     <div id="time-center">
-                        Time Remaining: <span id="time">2:00</span>
+                        Time Remaining: <span id="time">Not Started</span>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-4">
@@ -84,33 +39,33 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-6 col-sm-4 col-md-4" id="dropZones">
-                <a href="https://www.blueapron.com/recipes/pork-meatballs-in-butter-lettuce-cups-with-soy-dipping-sauce-sticky-rice" class="recipe-link">
-                <img alt="Asian Pork Meatballs" class="img-max" id="meatballs" src="http://d3ocwlpqxdtw9u.cloudfront.net/recipes/1384/c_main_dish_images/20151001-1931-14-7875/2P_092215_6_AsianPorkMeatballsButterLettuce_20-_204324_high_menu_thumb.jpg" />
+                <a draggable="false" href="https://www.blueapron.com/recipes/pork-meatballs-in-butter-lettuce-cups-with-soy-dipping-sauce-sticky-rice" class="recipe-link">
+                <img draggable="false" alt="Asian Pork Meatballs" class="img-max" id="meatballs" src="http://d3ocwlpqxdtw9u.cloudfront.net/recipes/1384/c_main_dish_images/20151001-1931-14-7875/2P_092215_6_AsianPorkMeatballsButterLettuce_20-_204324_high_menu_thumb.jpg" />
             </a>
             </div>
             <div class="col-xs-6 col-sm-4 col-md-4" id="dropZones">
-                <a href="https://www.blueapron.com/recipes/jamaican-jerk-chicken-maduros-with-stewed-collard-greens-charred-lime" class="recipe-link">
-                <img alt="Jerk Chicken Maduros" class="img-max" id="maduros" src="http://d3ocwlpqxdtw9u.cloudfront.net/recipes/1383/c_main_dish_images/20151001-2043-27-9766/2P_092215_3_JerkChicken_Maduros_20-_204254_high_menu_thumb.jpg" />
+                <a draggable="false" href="https://www.blueapron.com/recipes/jamaican-jerk-chicken-maduros-with-stewed-collard-greens-charred-lime" class="recipe-link">
+                <img draggable="false" alt="Jerk Chicken Maduros" class="img-max" id="maduros" src="http://d3ocwlpqxdtw9u.cloudfront.net/recipes/1383/c_main_dish_images/20151001-2043-27-9766/2P_092215_3_JerkChicken_Maduros_20-_204254_high_menu_thumb.jpg" />
             </a>
             </div>
             <div class="col-xs-6 col-sm-4 col-md-4" id="dropZones">
-                <a href="https://www.blueapron.com/recipes/salmon-pastrami-on-rye-with-red-cabbage-green-apple-slaw" class="recipe-link">
-                <img alt="Salmon Pastrami" class="img-max" id="pastrami" src="http://d3ocwlpqxdtw9u.cloudfront.net/recipes/341/c_main_dish_images/20151001-2147-14-0756/forcard2_high_menu_thumb.jpg" />
+                <a draggable="false" href="https://www.blueapron.com/recipes/salmon-pastrami-on-rye-with-red-cabbage-green-apple-slaw" class="recipe-link">
+                <img draggable="false" alt="Salmon Pastrami" class="img-max" id="pastrami" src="http://d3ocwlpqxdtw9u.cloudfront.net/recipes/341/c_main_dish_images/20151001-2147-14-0756/forcard2_high_menu_thumb.jpg" />
             </a>
             </div>
             <div class="col-xs-6 col-sm-4 col-md-4" id="dropZones">
-                <a href="https://www.blueapron.com/recipes/baked-sicilian-style-rigatoni-with-lacinato-kale-ricotta-salata" class="recipe-link">
-                <img alt="Baked Sicilian" class="img-max" id="sicilian" src="http://d3ocwlpqxdtw9u.cloudfront.net/recipes/1385/c_main_dish_images/20151001-2117-18-4133/2P_092215_3_BakedSicilanStyleRigatoni_20-_204269_high_menu_thumb.jpg" />
+                <a draggable="false" href="https://www.blueapron.com/recipes/baked-sicilian-style-rigatoni-with-lacinato-kale-ricotta-salata" class="recipe-link">
+                <img draggable="false" alt="Baked Sicilian" class="img-max" id="sicilian" src="http://d3ocwlpqxdtw9u.cloudfront.net/recipes/1385/c_main_dish_images/20151001-2117-18-4133/2P_092215_3_BakedSicilanStyleRigatoni_20-_204269_high_menu_thumb.jpg" />
                 </a>
             </div>
             <div class="col-xs-6 col-sm-4 col-md-4" id="dropZones">
-                <a href="https://www.blueapron.com/recipes/acorn-squash-tempura-tacos-with-spanish-paprika" class="recipe-link">
-                <img alt="Acorn Squash Tacos" class="img-max" id="tacos" src="http://d3ocwlpqxdtw9u.cloudfront.net/recipes/125/c_main_dish_images/20141125-2117-8801-0530/acorn_20squash_20tacos-5563_high_menu_thumb.jpg" />
+                <a draggable="false" href="https://www.blueapron.com/recipes/acorn-squash-tempura-tacos-with-spanish-paprika" class="recipe-link">
+                <img draggable="false" alt="Acorn Squash Tacos" class="img-max" id="tacos" src="http://d3ocwlpqxdtw9u.cloudfront.net/recipes/125/c_main_dish_images/20141125-2117-8801-0530/acorn_20squash_20tacos-5563_high_menu_thumb.jpg" />
             </a>
             </div>
             <div class="col-xs-6 col-sm-4 col-md-4" id="dropZones">
-                <a href="https://www.blueapron.com/recipes/tahini-beet-soba-with-beet-greens-and-cabbage" class="recipe-link">
-                <img alt="Beet Soba Noodles" class="img-max" id="noodles" src="http://d3ocwlpqxdtw9u.cloudfront.net/recipes/473/c_main_dish_images/20141003-2004-6741-5840/Beet_20Tahini_20Soba_20Noodles-3913_high_menu_thumb.jpg" />
+                <a draggable="false" href="https://www.blueapron.com/recipes/tahini-beet-soba-with-beet-greens-and-cabbage" class="recipe-link">
+                <img draggable="false" alt="Beet Soba Noodles" class="img-max" id="noodles" src="http://d3ocwlpqxdtw9u.cloudfront.net/recipes/473/c_main_dish_images/20141003-2004-6741-5840/Beet_20Tahini_20Soba_20Noodles-3913_high_menu_thumb.jpg" />
             </a>
             </div>
         </div>
@@ -123,7 +78,7 @@
             <div class="col-md-12 col-sm-12 col-xs-18">
                 <div id="recipecard-box">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-4 col-md-4">
+                        <div class="col-xs-6 col-sm-4 col-md-4" id="drag-elements">
                             <div draggable="true" id="pork-meatballs" class="card-size">
                                 Pork Meatballs in Butter Lettuce Cups
                                 <div class="subtitle">with Soy Dipping Sauce & Sticky Rice</div>
